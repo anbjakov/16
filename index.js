@@ -3,12 +3,15 @@ const API_URL =  'https://jsonplaceholder.typicode.com/users';
 'use strict'
 const API_URL = "https://jsonplaceholder.typicode.com/albums";
 const albumsList = document.getElementById('albums');
+albumsList.onclick = deleteItem;
 
 fetchAPI(API_URL).then(albums=>{
     albums.map(album=>appendListItem(albumsList,album.title));
 })
 
-const deleteItem = (e)=>{
+function deleteItem (e){
+    const node = e.target;
+    if (node === 'BUTTON')
     e.target.closest('li').remove()
 }
 
@@ -17,7 +20,6 @@ function appendListItem(targetList,content){
     const listNode = document.createElement('li');
     const removeAlbumButton = document.createElement('button');
     listNode.classList.add(liClassName);
-    removeAlbumButton.onclick = deleteItem;
     listNode.innerHTML = content;
     removeAlbumButton.innerHTML = "Delete"
     listNode.append(removeAlbumButton);
