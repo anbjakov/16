@@ -8,8 +8,7 @@ fetchAPI(API_URL).then(albums=>{
 
 function deleteItem (e){
     const node = e.target;
-    if (node === 'BUTTON')
-    e.target.closest('li').remove()
+    if (node === 'BUTTON')  e.target.closest('li').remove()
 }
 
 function appendListItem(targetList,content){
