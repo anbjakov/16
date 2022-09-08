@@ -1,6 +1,3 @@
-'use strict'
-const API_URL =  'https://jsonplaceholder.typicode.com/users';
-'use strict'
 const API_URL = "https://jsonplaceholder.typicode.com/albums";
 const albumsList = document.getElementById('albums');
 albumsList.onclick = deleteItem;
